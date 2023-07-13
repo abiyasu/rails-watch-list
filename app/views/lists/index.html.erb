@@ -1,6 +1,7 @@
-<h1>Show</h1>
-<ul>
+<h1>My List</h1>
+<ul class="list-group list-group-numbered">
   <% @lists.each do |list| %>
-    <li>list.name</li>
+    <li class="list-group-item"><%= list.name %></li>
+    <%= link_to "Show this list", list %>
   <% end %>
 </ul>

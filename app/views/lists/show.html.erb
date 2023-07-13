@@ -1,7 +1,2 @@
-
-<p><strong>Bookmark</strong></p>
-<ul class="list-group">
-  <% @list.bookmark.each do |bookmark| %>
-    <li class="list-group-item"><%= bookmark.content %></li>
-  <% end %>
-</ul>
+<h2><%= @list.name %></h2>
+<p> <%= link_to "Homepage", lists_path %></p>

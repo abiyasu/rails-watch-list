@@ -1,10 +1,11 @@
 class ListsController < ApplicationController
-before_action :find_list, only: [ :show, :destroy ]
+  before_action :find_list, only: [ :show, :destroy ]
   def index
     @lists = List.all
   end
 
   def show
+    @list = List.find(params[:id])
   end
 
   def new
@@ -12,7 +13,7 @@ before_action :find_list, only: [ :show, :destroy ]
   end
 
   def create
-    @list = List.find(params[:id])
+    @list = List.new(list_params)
     @list.save!
     redirect_to list_path(@list)
   end
@@ -22,7 +23,7 @@ before_action :find_list, only: [ :show, :destroy ]
     redirect_to list_path(@list)
   end
 
-private
+  private
 
   def list_params
     params.require(:list).permit(:name)
