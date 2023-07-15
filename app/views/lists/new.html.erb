@@ -1,6 +1,6 @@
-<%= form_with model: @list do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.submit %>
+<%= simple_form_for @list do |f| %>
+  <%= f.input :name, label: "name", placeholder: 'Drama' %>
   <%= f.input :photo, as: :file %>
+  <%= f.submit class: 'btn btn-flat' %>
 <% end %>
+<p> <%= link_to "Homepage", lists_path %></p>
